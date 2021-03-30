@@ -1,0 +1,19 @@
+{
+  "name": "recipe-organizer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pritckat/recipe-organizer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pritckat/recipe-organizer/issues"
+  },
+  "homepage": "https://github.com/pritckat/recipe-organizer#readme"
+}
