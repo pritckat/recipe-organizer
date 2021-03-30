@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/pritckat/recipe-organizer/issues"
   },
-  "homepage": "https://github.com/pritckat/recipe-organizer#readme"
+  "homepage": "https://github.com/pritckat/recipe-organizer#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
