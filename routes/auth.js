@@ -3,7 +3,7 @@ const passport = require('passport')
 const config = require('../config/config')
 const router = express.Router()
 
-
+router.get('/test', (req,res)=> res.render('./pages/index.ejs'))
 router.get('/login',
   function(req, res, next) {
     passport.authenticate('azuread-openidconnect', 
@@ -17,7 +17,7 @@ router.get('/login',
   },
   function(req, res) {
     console.log('Login was called in the Sample');
-    res.redirect('/todos');
+    res.redirect('/');
 });
 
 router.get('/openid/return',
