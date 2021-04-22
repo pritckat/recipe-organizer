@@ -13,7 +13,7 @@ module.exports = {
         try{
             await Recipe.create({name: req.body.name, madeBefore: false})
             console.log('Recipe has been added!')
-            res.redirect('/pages/recipes')
+            res.redirect('/recipes')
         }catch(err){
             console.log(err)
         }
