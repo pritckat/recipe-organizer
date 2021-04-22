@@ -1,0 +1,9 @@
+<h1>Recipes</h1>
+<% recipes.forEach( el => { %>
+    <li class='todoItem' data-id='<%=el._id%>'>
+        <span <%= el.name %></span>
+        <!-- <span class='del'> Delete </span> -->
+    </li>
+<% }) %>    
+</ul>
+<%- include('../partials/recipeForm.ejs') %>
