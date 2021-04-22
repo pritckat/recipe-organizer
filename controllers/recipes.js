@@ -1,11 +1,9 @@
-const recipe = require("../models/recipe")
+const Recipe = require("../models/recipe")
 
 module.exports = {
     getRecipes: async (req,res)=>{
         try{
-            const recipeItems = await recipe.find()
-            console.log('hi')
-            console.log(recipeItems)
+            const recipeItems = await Recipe.find()
             res.render('./pages/recipes.ejs', {recipes: recipeItems})
         }catch(err){
         console.log(err)
@@ -15,7 +13,7 @@ module.exports = {
         try{
             await Recipe.create({name: req.body.name, madeBefore: false})
             console.log('Recipe has been added!')
-            res.redirect('/recipes')
+            res.redirect('/pages/recipes')
         }catch(err){
             console.log(err)
         }
