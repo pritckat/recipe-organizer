@@ -8,10 +8,6 @@ const RecipeSchema = new mongoose.Schema({
   madeBefore: {
     type: Boolean,
     required: true,
-  },
-  comfort: {
-    type: Boolean,
-    required: true
   }
 })
 
