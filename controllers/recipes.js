@@ -10,5 +10,14 @@ module.exports = {
         }catch(err){
         console.log(err)
         }
+    },
+    createRecipe: async (req, res)=>{
+        try{
+            await Recipe.create({name: req.body.name, madeBefore: false})
+            console.log('Recipe has been added!')
+            res.redirect('/recipes')
+        }catch(err){
+            console.log(err)
+        }
     }
 }
