@@ -17,5 +17,14 @@ module.exports = {
         }catch(err){
             console.log(err)
         }
+    },
+    deleteRecipe: async (req,res) => {
+        try{
+            await Recipe.findOneAndDelete({name: req.body.name})
+            console.log('Recipe deleted')
+            res.redirect('/recipes')
+        }catch(err){
+            console.log(err)
+        }
     }
 }
