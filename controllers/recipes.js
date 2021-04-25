@@ -26,5 +26,15 @@ module.exports = {
         }catch(err){
             console.log(err)
         }
+    },
+    updateRecipe: async (req, res)=>{
+        try{
+            await Recipe.findOneAndUpdate({_id:req.body.RecipeIdFromJSFile},{
+                madeBefore: true
+            })
+            console.log('Updated')
+        }catch(err){
+            console.log(err)
+        }
     }
 }

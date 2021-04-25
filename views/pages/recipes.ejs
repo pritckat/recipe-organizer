@@ -2,6 +2,7 @@
 <% recipes.forEach( el => { %>
     <li class='todoItem' data-id='<%=el._id%>'>
         <span> <%= el.name %></span>
+        <button class="editItem">edit</button>
     </li>
 <% }) %>    
 </ul>
