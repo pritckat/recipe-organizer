@@ -5,9 +5,23 @@ const RecipeSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  madeBefore: {
-    type: Boolean,
+  timesMade: {
+    type: Number,
     required: true,
+  },
+  lastMade: {
+    type: Date,
+    required: false,
+  },
+  tags: {
+    type: Array,
+    required: false,
+    default: [],
+  },
+  tags: {
+    type: Array,
+    required: false,
+    default: [],
   }
 })
 
