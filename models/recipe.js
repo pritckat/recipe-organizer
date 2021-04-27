@@ -18,7 +18,7 @@ const RecipeSchema = new mongoose.Schema({
     required: false,
     default: [],
   },
-  tags: {
+  ingredients: {
     type: Array,
     required: false,
     default: [],

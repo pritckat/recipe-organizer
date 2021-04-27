@@ -11,7 +11,7 @@ module.exports = {
     },
     createRecipe: async (req, res)=>{
         try{
-            await Recipe.create({name: req.body.name, madeBefore: false})
+            await Recipe.create({name: req.body.name, timesMade: 0, tags: ['homey']})
             console.log('Recipe has been added!')
             res.redirect('/recipes')
         }catch(err){
