@@ -1,7 +1,9 @@
 <h1>Recipes</h1>
 <% recipes.forEach( el => { %>
-    <li class='todoItem' data-id='<%=el._id%>'>
-        <span> <%= el.name %></span>
+    <li class='recipeName' data-id='<%=el._id%>'>
+        <a href='./recipes/<%= el._id %>'>
+            <span> <%= el.name %></span>
+        </a>
         <button class="editItem">edit</button>
     </li>
 <% }) %>    
