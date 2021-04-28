@@ -11,9 +11,7 @@ module.exports = {
     },
     getRecipe: async (req,res)=>{
         try{
-            const recipe = await Recipe.findOne({_id:req.params.id})
-            console.log(req.params.id)
-            console.log(recipe)
+            const recipe = await Recipe.findOne({_id: req.params.id})
             res.render('./pages/recipe.ejs', {recipe: recipe})
         }catch(err){
         console.log(err)
