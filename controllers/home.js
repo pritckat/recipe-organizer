@@ -4,6 +4,8 @@
     },
 
     getProfile: (req,res)=>{
-      res.render('profile.ejs')
+      console.log(req.user)
+      const user = req.user.userName
+      res.render('profile.ejs', {user: user})
     }
 }
