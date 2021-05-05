@@ -1,2 +1,8 @@
+<%- include('../partials/header') -%>
+
 <h1><%= recipe.name %></h1>
 <p>testing</p>
+<button id="editRecipe">Edit</button>
+<form method="POST" action="updateRecipe">
+    <button class="hidden">Submit</button>
+</form>

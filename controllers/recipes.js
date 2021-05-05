@@ -4,7 +4,7 @@ module.exports = {
     getRecipes: async (req,res)=>{
         try{
             const recipeItems = await Recipe.find()
-            res.render('./pages/recipes.ejs', {recipes: recipeItems})
+            res.render('recipes', {recipes: recipeItems})
         }catch(err){
         console.log(err)
         }
@@ -12,7 +12,7 @@ module.exports = {
     getRecipe: async (req,res)=>{
         try{
             const recipe = await Recipe.findOne({_id: req.params.id})
-            res.render('./pages/recipe.ejs', {recipe: recipe})
+            res.render('recipe', {recipe: recipe})
         }catch(err){
         console.log(err)
         }
