@@ -13,13 +13,19 @@ module.exports = {
         try{
             const recipe = await Recipe.findOne({_id: req.params.id})
             res.render('recipe', {recipe: recipe})
+            console.log(recipe.user)
         }catch(err){
         console.log(err)
         }
     },
     createRecipe: async (req, res)=>{
         try{
-            await Recipe.create({name: req.body.name, timesMade: 0, tags: ['homey']})
+            await Recipe.create({
+                name: req.body.name,
+                timesMade: 0,
+                tags: ['homey'],
+                user: req.user._id
+            })
             console.log('Recipe has been added!')
             res.redirect('/recipes')
         }catch(err){

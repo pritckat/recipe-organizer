@@ -22,6 +22,10 @@ const RecipeSchema = new mongoose.Schema({
     type: Array,
     required: false,
     default: [],
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
   }
 })
 
