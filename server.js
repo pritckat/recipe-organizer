@@ -1,11 +1,11 @@
 const express = require('express')
 const app = express()
+const path = require('path')
 const mongoose = require('mongoose')
 const passport = require('passport')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 const connectDB = require('./config/database')
-const authRoutes = require('./routes/auth')
 const homeRoutes = require('./routes/home')
 const recipeRoutes = require('./routes/recipes')
 require('dotenv').config({path: './config/.env'})
@@ -19,6 +19,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.set('views', path.join(__dirname, '/views/pages'));
 
 // Sessions
 app.use(
@@ -36,7 +37,6 @@ app.use(passport.session())
 
   
 app.use('/', homeRoutes)
-app.use('/auth', authRoutes)
 app.use('/recipes', recipeRoutes)
  
 app.listen(process.env.PORT, ()=>{
