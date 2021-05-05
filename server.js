@@ -8,6 +8,8 @@ const MongoStore = require('connect-mongo')(session)
 const connectDB = require('./config/database')
 const homeRoutes = require('./routes/home')
 const recipeRoutes = require('./routes/recipes')
+var flash = require('connect-flash');
+
 require('dotenv').config({path: './config/.env'})
 
 // Passport config
@@ -19,6 +21,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.use(flash())
 app.set('views', path.join(__dirname, '/views/pages'));
 
 // Sessions
