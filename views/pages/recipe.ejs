@@ -5,8 +5,8 @@
         <p>testing</p>
         <button id="editRecipe">Edit</button>
     </container>
-    <form method="POST" action="updateRecipe" class="updateForm" hidden>
-        <input class="h1" type="text" value=" <%=recipe.name%> "><br>
+    <form method="POST" action="updateRecipe/<%=recipe._id%>" class="updateForm" hidden>
+        <input name="recipeName" class="h1" type="text" value="<%=recipe.name%>"><br>
         <button class="">Submit</button>
     </form>
 </body>

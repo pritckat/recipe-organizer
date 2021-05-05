@@ -37,10 +37,16 @@ module.exports = {
     },
     updateRecipe: async (req, res)=>{
         try{
-            await Recipe.findOneAndUpdate({_id:req.body.name},{
-                madeBefore: true
-            })
+            console.log(req.params)
+            await Recipe.findOneAndUpdate(
+                {_id:req.params.id},
+                {$set: {
+                    madeBefore: true,
+                    name: req.body.recipeName
+                }}
+            )
             console.log('Updated')
+            res.redirect('/recipes')
         }catch(err){
             console.log(err)
         }
