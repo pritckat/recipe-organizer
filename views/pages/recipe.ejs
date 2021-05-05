@@ -1,10 +1,13 @@
 <%- include('../partials/header') -%>
-
-<h1><%= recipe.name %></h1>
-<p>testing</p>
-<button id="editRecipe">Edit</button>
-<form method="POST" action="updateRecipe">
-    <button class="hidden">Submit</button>
-</form>
-
+<body>
+    <container class="regular">
+        <h1><%= recipe.name %></h1>
+        <p>testing</p>
+        <button id="editRecipe">Edit</button>
+    </container>
+    <form method="POST" action="updateRecipe" class="updateForm" hidden>
+        <input class="h1" type="text" value=" <%=recipe.name%> "><br>
+        <button class="">Submit</button>
+    </form>
+</body>
 <%- include('../partials/footer') -%>
