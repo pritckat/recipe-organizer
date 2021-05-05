@@ -49,7 +49,7 @@ const User = require('../models/User')
     if (request.user) {
       return response.redirect('/profile')
     }
-    response.render('/signup', {
+    response.render('signup', {
       title: 'Create Account'
     })
   }
