@@ -13,7 +13,6 @@ module.exports = {
         try{
             const recipe = await Recipe.findOne({_id: req.params.id})
             res.render('recipe', {recipe: recipe})
-            console.log(recipe.user)
         }catch(err){
         console.log(err)
         }
