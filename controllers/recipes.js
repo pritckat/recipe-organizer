@@ -26,7 +26,7 @@ module.exports = {
                 user: req.user._id
             })
             console.log('Recipe has been added!')
-            res.redirect('/recipes')
+            res.redirect('/profile')
         }catch(err){
             console.log(err)
         }
