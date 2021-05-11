@@ -11,7 +11,3 @@ function viewEditForm() {
 }
 
 // to create: search for recipe feature, see random recipe
-
-function getRandomRecipe() {
-    alert('hi')
-}

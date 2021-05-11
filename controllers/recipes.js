@@ -55,5 +55,13 @@ module.exports = {
         }catch(err){
             console.log(err)
         }
+    },
+    getRandomRecipe: async(req, res)=>{
+        try{
+            const recipe = await Recipe.aggregate([{$sample:{size: 1}}])
+            res.render('random', {recipe: recipe[0]})
+        }catch(err){
+            console.log(err)
+        }
     }
 }
