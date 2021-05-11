@@ -1,0 +1,9 @@
+<ul>
+    <% recipes.forEach( el => { %>
+        <li class='recipeName' data-id='<%=el._id%>'>
+            <a href='./recipes/<%= el._id %>'>
+                <span> <%= el.name %></span>
+            </a>
+        </li>
+    <% }) %>    
+    </ul>
