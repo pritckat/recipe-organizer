@@ -14,5 +14,4 @@ const Recipe = require("../models/recipe")
         console.log(err)
       }
     },
-
 }

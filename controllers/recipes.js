@@ -67,6 +67,13 @@ module.exports = {
     searchRecipes: async (req,res)=>{
         console.log(req.params)
         const recipes = await Recipe.find({user: req.user})
-        res.render('profile.ejs', {user: req.user.userName})
-      }
+        console.log(recipes)
+        res.render('search.ejs', {user: req.user.userName, recipes: recipes})
+    },
+    getSearch: async (req,res)=>{
+        console.log(req.params)
+        const recipes = await Recipe.find({user: req.user})
+        console.log(recipes)
+        res.render('search.ejs', {recipes: recipes})
+    }
 }
