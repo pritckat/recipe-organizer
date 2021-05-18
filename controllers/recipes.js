@@ -23,7 +23,9 @@ module.exports = {
                 name: req.body.name,
                 timesMade: 0,
                 tags: ['homey'],
-                user: req.user._id
+                user: req.user._id,
+                source: req.body.source,
+                sourceType: 'yes'
             })
             console.log('Recipe has been added!')
             res.redirect('/profile')
