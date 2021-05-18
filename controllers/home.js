@@ -7,11 +7,16 @@ const Recipe = require("../models/recipe")
 
     getProfile: async (req,res)=>{
       try {
-        const user = req.user.userName
+        console.log(req.user)
         const recipes = await Recipe.find({user: req.user._id})
-        res.render('profile.ejs', {user: user, recipes: recipes})
+        res.render('profile.ejs', {user: req.user.userName, recipes: recipes})
       } catch(err){
         console.log(err)
       }
+    },
+    searchRecipes: async (req,res)=>{
+      console.log(req.params)
+      const recipes = await Recipe.find({user: req.user})
+      res.render('profile.ejs', {user: req.user.userName})
     }
 }
