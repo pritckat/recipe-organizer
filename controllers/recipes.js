@@ -63,5 +63,10 @@ module.exports = {
         }catch(err){
             console.log(err)
         }
-    }
+    },
+    searchRecipes: async (req,res)=>{
+        console.log(req.params)
+        const recipes = await Recipe.find({user: req.user})
+        res.render('profile.ejs', {user: req.user.userName})
+      }
 }
